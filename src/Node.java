@@ -1,10 +1,18 @@
+/*
+
+Author: Harsha Srikara
+Date Created: May 16 2019
+
+This Node class will be used by both the linked list classes as well as the binary tree classes
+ */
+
 public class Node<DataType>
 {
     //variables
     private DataType data;
 
-    private Node nextNode;
-    private Node prevNode;
+    private Node nextNode; //also left
+    private Node prevNode; //also right
 
     //constructors
     public Node()

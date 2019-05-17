@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4a00b9cb-bfc8-4d8d-8966-c2f9a0edd99f" name="Default Changelist" comment="" />
+    <list default="true" id="4a00b9cb-bfc8-4d8d-8966-c2f9a0edd99f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,23 +25,24 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Node.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
+            <state relative-caret-position="195">
+              <caret line="13" column="38" lean-forward="true" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
               <folding>
-                <element signature="e#648#649#0" expanded="true" />
-                <element signature="e#685#686#0" expanded="true" />
-                <element signature="e#610#611#0" expanded="true" />
-                <element signature="e#640#641#0" expanded="true" />
-                <element signature="e#677#678#0" expanded="true" />
-                <element signature="e#707#708#0" expanded="true" />
-                <element signature="e#768#769#0" expanded="true" />
-                <element signature="e#794#795#0" expanded="true" />
-                <element signature="e#840#841#0" expanded="true" />
-                <element signature="e#871#872#0" expanded="true" />
-                <element signature="e#916#917#0" expanded="true" />
-                <element signature="e#947#948#0" expanded="true" />
-                <element signature="e#1166#1167#0" expanded="true" />
-                <element signature="e#1195#1196#0" expanded="true" />
+                <element signature="e#0#1646#0" expanded="true" />
+                <element signature="e#774#775#0" expanded="true" />
+                <element signature="e#801#802#0" expanded="true" />
+                <element signature="e#837#838#0" expanded="true" />
+                <element signature="e#868#869#0" expanded="true" />
+                <element signature="e#904#905#0" expanded="true" />
+                <element signature="e#935#936#0" expanded="true" />
+                <element signature="e#995#996#0" expanded="true" />
+                <element signature="e#1022#1023#0" expanded="true" />
+                <element signature="e#1067#1068#0" expanded="true" />
+                <element signature="e#1098#1099#0" expanded="true" />
+                <element signature="e#1143#1144#0" expanded="true" />
+                <element signature="e#1174#1175#0" expanded="true" />
+                <element signature="e#1539#1540#0" expanded="true" />
+                <element signature="e#1577#1578#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -54,6 +57,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -66,6 +72,7 @@
     <option name="width" value="1680" />
     <option name="height" value="1050" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -79,7 +86,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558056695544" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558057160714" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RunDashboard">
@@ -121,12 +128,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1558049471348</updated>
-      <workItem from="1558049476627" duration="4356000" />
+      <workItem from="1558049476627" duration="4789000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4356000" />
+    <option name="totallyTimeSpent" value="4789000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -176,23 +183,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
+        <state relative-caret-position="195">
+          <caret line="13" column="38" lean-forward="true" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
           <folding>
-            <element signature="e#648#649#0" expanded="true" />
-            <element signature="e#685#686#0" expanded="true" />
-            <element signature="e#610#611#0" expanded="true" />
-            <element signature="e#640#641#0" expanded="true" />
-            <element signature="e#677#678#0" expanded="true" />
-            <element signature="e#707#708#0" expanded="true" />
-            <element signature="e#768#769#0" expanded="true" />
-            <element signature="e#794#795#0" expanded="true" />
-            <element signature="e#840#841#0" expanded="true" />
-            <element signature="e#871#872#0" expanded="true" />
-            <element signature="e#916#917#0" expanded="true" />
-            <element signature="e#947#948#0" expanded="true" />
-            <element signature="e#1166#1167#0" expanded="true" />
-            <element signature="e#1195#1196#0" expanded="true" />
+            <element signature="e#0#1646#0" expanded="true" />
+            <element signature="e#774#775#0" expanded="true" />
+            <element signature="e#801#802#0" expanded="true" />
+            <element signature="e#837#838#0" expanded="true" />
+            <element signature="e#868#869#0" expanded="true" />
+            <element signature="e#904#905#0" expanded="true" />
+            <element signature="e#935#936#0" expanded="true" />
+            <element signature="e#995#996#0" expanded="true" />
+            <element signature="e#1022#1023#0" expanded="true" />
+            <element signature="e#1067#1068#0" expanded="true" />
+            <element signature="e#1098#1099#0" expanded="true" />
+            <element signature="e#1143#1144#0" expanded="true" />
+            <element signature="e#1174#1175#0" expanded="true" />
+            <element signature="e#1539#1540#0" expanded="true" />
+            <element signature="e#1577#1578#0" expanded="true" />
           </folding>
         </state>
       </provider>
