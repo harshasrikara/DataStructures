@@ -105,6 +105,8 @@ public class LinkedList
             }
         }
     }
+
+
     public Node getHead()
     {
         return head;
@@ -150,7 +152,7 @@ public class LinkedList
         }
         else
         {
-            while(temp!=null)
+            for(int i = 0;i<count;i++)
             {
                 output = output + temp.toString();
                 temp = temp.getNextNode();
