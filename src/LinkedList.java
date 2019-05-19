@@ -4,6 +4,7 @@ public class LinkedList
     private int count;
     private boolean singlyLinked;
     private boolean circular;
+    Class<?> fixedClass;
 
     //constructors
     public LinkedList()
@@ -21,14 +22,16 @@ public class LinkedList
     }
     public LinkedList(boolean singly, boolean circ)
     {
+        this(singly,circ,Object.class);
         singlyLinked = singly;
         circular = circ;
     }
-    public LinkedList(Node n, boolean singly, boolean circ)
+    public LinkedList(boolean singly, boolean circ, Class<?> T)
     {
+        fixedClass = T;
         singlyLinked = singly;
         circular = circ;
-        insert(n);
+        //insert(n);
     }
 
     public void insert(Node n)
@@ -106,7 +109,6 @@ public class LinkedList
         }
     }
 
-
     public Node getHead()
     {
         return head;
@@ -123,7 +125,10 @@ public class LinkedList
     {
         return circular;
     }
-
+    public Class<?> getFixedClass()
+    {
+        return fixedClass;
+    }
 
     public boolean empty()
     {
