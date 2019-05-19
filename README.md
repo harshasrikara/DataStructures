@@ -8,13 +8,19 @@ Currently in development.
 
 ##### Singly
 
-Setting singly linked to true when creating the list will create a nextNode oriented list. Added features will eventually to make it singly linked in the opposite direction which will give the illusion of insertion in the back of the linked list.
+Setting singly linked to true when creating the list will create a nextNode oriented list. Added features will eventually make it singly linked in the opposite direction which will give the illusion of insertion in the back of the linked list.
 
 ##### Doubly
 
-
+Setting singly linked to false when creating the list will make the linked list be connected in both directions allowing traversal both forward and backward. Added feature will allow insertion in the back or front of the list.
 
 ##### Circular
+
+Both the singly linked and doubly linked list can be made circular. This ensures that the last node connects to the first node and in the case of the doubly linked list that the first node also connects backwards with the first node.
+
+#### Function Documentation
+
+To be added. Will contain an explanation of each function and their role in the linked list as well as future functions that are yet to be incorporated into the design.
 
 ### Tree
 
