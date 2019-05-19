@@ -6,6 +6,8 @@ Date Created: May 16 2019
 This Node class will be used by both the linked list classes as well as the binary tree classes
  */
 
+import javax.xml.crypto.Data;
+
 public class Node<DataType>
 {
     //variables
@@ -33,9 +35,9 @@ public class Node<DataType>
         setNextNode(next);
         setPrevNode(prev);
     }
-    public Node(Node copy) //copy constructor
+    public Node(Node<DataType> copy) //copy constructor
     {
-        setData((DataType)copy.getData());
+        setData(copy.getData());
         setNextNode(copy.getNextNode());
         setPrevNode(copy.getPrevNode());
     }
