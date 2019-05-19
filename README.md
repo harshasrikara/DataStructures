@@ -8,7 +8,13 @@ Currently in development.
 
 ##### Singly
 
+Setting singly linked to true when creating the list will create a nextNode oriented list. Added features will eventually to make it singly linked in the opposite direction which will give the illusion of insertion in the back of the linked list.
+
 ##### Doubly
+
+
+
+##### Circular
 
 ### Tree
 
