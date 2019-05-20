@@ -23,8 +23,6 @@ public class LinkedList
     public LinkedList(boolean singly, boolean circ)
     {
         this(singly,circ,Object.class);
-        singlyLinked = singly;
-        circular = circ;
     }
     public LinkedList(boolean singly, boolean circ, Class<?> T)
     {
@@ -36,6 +34,11 @@ public class LinkedList
 
     public void insert(Node n)
     {
+        if(!fixedClass.isAssignableFrom(n.getData().getClass()))
+        {
+            System.out.println("please insert only data from the following class - " + fixedClass);
+            return;
+        }
         if(empty())
         {
             head = n;
@@ -108,6 +111,11 @@ public class LinkedList
             }
         }
     }
+    public void insert(Class<?> cls)
+    {
+        Node<?> node = new Node<>(cls);
+        insert(node);
+    }
 
     public Node getHead()
     {
@@ -143,7 +151,7 @@ public class LinkedList
         count++;
     }
 
-    public String toString()
+    public String printForward()
     {
         String output = "";
         Node temp = head;
@@ -164,5 +172,33 @@ public class LinkedList
             }
         }
         return output;
+    }
+
+    public String printBackward()
+    {
+        String output = "";
+        Node temp = head.getPrevNode();
+        if(circular)
+        {
+            for(int i = 0;i<count;i++)
+            {
+                output = output + temp.toString();
+                temp = temp.getPrevNode();
+            }
+        }
+        else
+        {
+            for(int i = 0;i<count;i++)
+            {
+                output = output + temp.toString();
+                temp = temp.getPrevNode();
+            }
+        }
+        return output;
+    }
+
+    public String toString()
+    {
+        return printForward();
     }
 }

@@ -6,8 +6,6 @@ Date Created: May 16 2019
 This Node class will be used by both the linked list classes as well as the binary tree classes
  */
 
-import javax.xml.crypto.Data;
-
 public class Node<DataType>
 {
     //variables
