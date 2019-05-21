@@ -36,7 +36,7 @@ public class LinkedList
     {
         if(!fixedClass.isAssignableFrom(n.getData().getClass()))
         {
-            System.out.println("please insert only data from the following class - " + fixedClass);
+            System.out.println("please insert only data from the following class - " + fixedClass + " " + n.getData() + " is invalid");
             return;
         }
         if(empty())
@@ -111,9 +111,9 @@ public class LinkedList
             }
         }
     }
-    public void insert(Class<?> cls)
+    public <T> void insert(T cls)
     {
-        Node<?> node = new Node<>(cls);
+        Node<T> node = new Node<>(cls);
         insert(node);
     }
 

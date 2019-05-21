@@ -85,6 +85,7 @@ public class Node<DataType>
         n.setData(temp);
     }
 
+
     //toString
     public String toString()
     {
