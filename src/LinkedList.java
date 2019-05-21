@@ -69,7 +69,8 @@ public class LinkedList
                 }
                 n.setNextNode(head);
                 n.setPrevNode(null);
-                head.getPrevNode().setNextNode(n);
+                getLastNode().setNextNode(n);
+                //head.getPrevNode().setNextNode(n);
                 head = n;
                 incrementCount();
             }
@@ -110,10 +111,24 @@ public class LinkedList
             }
         }
     }
+
+    //inserting a node of any datatype
+    //generic class T is used in this method
+    //checking of whether the datatype is allowed in this list is handled by the other insert method
     public <T> void insert(T cls)
     {
         Node<T> node = new Node<>(cls);
         insert(node);
+    }
+
+    public Node getLastNode()
+    {
+        Node temp = head;
+        while(!(temp.getNextNode() == null || temp.getNextNode() == head))
+        {
+            temp = temp.getNextNode();
+        }
+        return temp;
     }
 
     public Node getHead()
@@ -137,14 +152,59 @@ public class LinkedList
         return fixedClass;
     }
 
-    public void doublyLink()
+    public void setSinglyLinked(boolean var)
     {
-        if(!singlyLinked)
+        if(var == singlyLinked)
         {
-            System.out.println("Linked list is already doubly linked");
+            if(singlyLinked) //if(singlyLinked == true)
+            {
+                System.out.println("Linked list is already singly linked");
+            }
+            else
+            {
+                System.out.println("Linked list is already doubly linked");
+            }
             return;
         }
-        Node temp = head;
+
+        singlyLinked = var;
+
+        if(var) //set singly linked to true
+        {
+            Node temp = head;
+            while(!(temp.getNextNode() == head || temp.getNextNode() == null))
+            {
+                temp.setPrevNode(null);
+                temp = temp.getNextNode();
+            }
+            temp.setPrevNode(null);
+        }
+        else
+        {
+            Node temp = head;
+            Node ahead = temp.getNextNode();
+            if(ahead == null || temp == null)
+            {
+                return;
+            }
+
+            while(!(temp.getNextNode() == head || temp.getNextNode() == null))
+            {
+                if(ahead == null)
+                {
+                    return;
+                }
+                ahead.setPrevNode(temp);
+                temp = temp.getNextNode();
+                ahead = ahead.getNextNode();
+            }
+            if(temp.getNextNode() == head && ahead == head)
+            {
+                ahead.setPrevNode(temp);
+            }
+        }
+
+
 
     }
     public boolean empty()
@@ -190,10 +250,12 @@ public class LinkedList
             System.out.println("Linked List is singly linked - Cannot print backwards");
             return null;
         }
+
         String output = "";
-        Node temp = head.getPrevNode();
+        //Node temp = head.getPrevNode();
         if(circular)
         {
+            Node temp = head.getPrevNode();
             for(int i = 0;i<count;i++)
             {
                 output = output + temp.toString();
@@ -202,6 +264,7 @@ public class LinkedList
         }
         else
         {
+            Node temp = getLastNode();
             for(int i = 0;i<count;i++)
             {
                 output = output + temp.toString();
