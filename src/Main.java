@@ -3,7 +3,7 @@ public class Main {
     public static void main(String[] args)
     {
         System.out.println("Hello World!");
-        LinkedList linkedList = new LinkedList(false,true, String.class);
+        LinkedList linkedList = new LinkedList(true,true, String.class);
         Node<Integer> node1 = new Node<>(3);
         Node<String> node2 = new Node<>("stringify");
         Node<Integer> node3 = new Node<>(5);

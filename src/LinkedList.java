@@ -29,7 +29,6 @@ public class LinkedList
         fixedClass = T;
         singlyLinked = singly;
         circular = circ;
-        //insert(n);
     }
 
     public void insert(Node n)
@@ -138,6 +137,16 @@ public class LinkedList
         return fixedClass;
     }
 
+    public void doublyLink()
+    {
+        if(!singlyLinked)
+        {
+            System.out.println("Linked list is already doubly linked");
+            return;
+        }
+        Node temp = head;
+
+    }
     public boolean empty()
     {
         if(count == 0)
@@ -176,6 +185,11 @@ public class LinkedList
 
     public String printBackward()
     {
+        if(singlyLinked)
+        {
+            System.out.println("Linked List is singly linked - Cannot print backwards");
+            return null;
+        }
         String output = "";
         Node temp = head.getPrevNode();
         if(circular)
@@ -199,6 +213,6 @@ public class LinkedList
 
     public String toString()
     {
-        return printForward();
+        return printBackward();
     }
 }
