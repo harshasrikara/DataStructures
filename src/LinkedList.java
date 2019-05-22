@@ -203,8 +203,36 @@ public class LinkedList
                 ahead.setPrevNode(temp);
             }
         }
+    }
+    public void setCircular(boolean var)
+    {
+        if(var == circular)
+        {
+            if(circular) //if(circular == true)
+            {
+                System.out.println("Linked list is already circular linked");
+            }
+            else
+            {
+                System.out.println("Linked list is already not circular linked");
+            }
+            return;
+        }
 
+        circular = var;
 
+        if(circular)
+        {
+            if(singlyLinked)
+            {
+                getLastNode().setNextNode(head);
+            }
+            else
+            {
+                getLastNode().setNextNode(head);
+                head.setPrevNode(getLastNode());
+            }
+        }
 
     }
     public boolean empty()
