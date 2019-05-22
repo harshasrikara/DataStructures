@@ -14,12 +14,6 @@ public class LinkedList
         singlyLinked = false;
         circular = false;
     }
-    public LinkedList(Node n)
-    {
-        singlyLinked = false;
-        circular = false;
-        insert(n);
-    }
     public LinkedList(boolean singly, boolean circ)
     {
         this(singly,circ,Object.class);
@@ -115,7 +109,7 @@ public class LinkedList
     //inserting a node of any datatype
     //generic class T is used in this method
     //checking of whether the datatype is allowed in this list is handled by the other insert method
-    public <T> void insert(T cls)
+    public <T extends Comparable<T>> void insert(T cls)
     {
         Node<T> node = new Node<>(cls);
         insert(node);
@@ -176,7 +170,7 @@ public class LinkedList
         if(var) //set singly linked to true
         {
             Node temp = head;
-            while(!(temp.getNextNode() == head || temp.getNextNode() == null))
+            while(!(temp.getNextNode() == getHead() || temp.getNextNode() == null))
             {
                 temp.setPrevNode(null);
                 temp = temp.getNextNode();

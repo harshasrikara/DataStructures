@@ -6,7 +6,9 @@ Date Created: May 16 2019
 This Node class will be used by both the linked list classes as well as the binary tree classes
  */
 
-public class Node<DataType>
+import javax.xml.crypto.Data;
+
+public class Node<DataType extends Comparable<DataType>>  implements Comparable<DataType>
 {
     //variables
     private DataType data;
@@ -83,6 +85,15 @@ public class Node<DataType>
         DataType temp = getData();
         setData((DataType)n.getData());
         n.setData(temp);
+    }
+
+    public int compareTo(DataType node)
+    {
+        if(getData() == node)
+        {
+            return 1;
+        }
+        return 0;
     }
 
 

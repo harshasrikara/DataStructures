@@ -11,20 +11,13 @@ public class Main {
         Node<Integer> node4 = new Node<>(6);
 
         linkedList.insert(node1);
-
         linkedList.insert(node2);
-
         linkedList.insert(node3);
-
         linkedList.insert(node4);
 
         linkedList.insert(1.234);
-
         linkedList.insert("bob");
-
         linkedList.insert(12.53);
-
-        //linkedList = linkedList.filter(String.class);
 
         System.out.println(linkedList.filter(Double.class).printForward());
 
@@ -32,8 +25,7 @@ public class Main {
 
         System.out.println(linkedList.printBackward());
 
-
-
+        System.out.println(linkedList.find(3));
 
     }
 }
