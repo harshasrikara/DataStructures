@@ -3,7 +3,8 @@ public class Main {
     public static void main(String[] args)
     {
         System.out.println("Hello World!");
-        LinkedList linkedList = new LinkedList(false,false);
+        LinkedList linkedList = new LinkedList(false,true);
+
         Node<Integer> node1 = new Node<>(3);
         Node<String> node2 = new Node<>("stringify");
         Node<Integer> node3 = new Node<>(5);
@@ -17,11 +18,15 @@ public class Main {
 
         linkedList.insert(node4);
 
+        linkedList.insert(1.234);
+
         linkedList.insert("bob");
 
         linkedList.insert(12.53);
 
-        //linkedList.setSinglyLinked(true);
+        //linkedList = linkedList.filter(String.class);
+
+        System.out.println(linkedList.filter(Double.class).printForward());
 
         System.out.println(linkedList.printForward());
 

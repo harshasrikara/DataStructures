@@ -123,8 +123,12 @@ public class LinkedList
 
     public Node getLastNode()
     {
+        if(empty())
+        {
+            return null;
+        }
         Node temp = head;
-        while(!(temp.getNextNode() == null || temp.getNextNode() == head))
+        for(int i =0;i<count-1;i++)
         {
             temp = temp.getNextNode();
         }
@@ -233,8 +237,51 @@ public class LinkedList
                 head.setPrevNode(getLastNode());
             }
         }
-
     }
+    public <T> boolean find(T cls)
+    {
+        Node temp = head;
+        for(int i = 0;i<getCount();i++)
+        {
+            if(temp.getData() == cls)
+            {
+                return true;
+            }
+            temp = temp.getNextNode();
+        }
+        return false;
+    }
+    public LinkedList filter(Class<?> cls)
+    {
+        //exit statements
+        if(cls == fixedClass)
+        {
+            return this;
+        }
+        if(fixedClass != Object.class && fixedClass != cls)
+        {
+            System.out.println();
+            return new LinkedList(getSinglyLinked(),getCircular());
+        }
+
+
+        //new filtered linked list is created - has same parameters as the original list
+        LinkedList filteredList = new LinkedList(getSinglyLinked(),getCircular());
+
+        Node temp = head;
+        for(int i = 0;i<getCount();i++)
+        {
+            //System.out.println("In loop");
+            if(temp.getData().getClass() == cls)
+            {
+                //System.out.println("In function");
+                filteredList.insert(temp.getData());
+            }
+            temp = temp.getNextNode();
+        }
+        return filteredList;
+    }
+
     public boolean empty()
     {
         if(count == 0)
@@ -256,7 +303,7 @@ public class LinkedList
         {
             for(int i = 0;i<count;i++)
             {
-                output = output + temp.toString();
+                output = output + temp.toString() + " ";
                 temp = temp.getNextNode();
             }
         }
@@ -264,7 +311,7 @@ public class LinkedList
         {
             for(int i = 0;i<count;i++)
             {
-                output = output + temp.toString();
+                output = output + temp.toString() + " ";
                 temp = temp.getNextNode();
             }
         }
@@ -286,7 +333,7 @@ public class LinkedList
             Node temp = head.getPrevNode();
             for(int i = 0;i<count;i++)
             {
-                output = output + temp.toString();
+                output = output + temp.toString() + " ";
                 temp = temp.getPrevNode();
             }
         }
@@ -295,7 +342,7 @@ public class LinkedList
             Node temp = getLastNode();
             for(int i = 0;i<count;i++)
             {
-                output = output + temp.toString();
+                output = output + temp.toString() + " ";
                 temp = temp.getPrevNode();
             }
         }
