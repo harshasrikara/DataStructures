@@ -7,25 +7,24 @@ public class LinkedList
     private Class<?> fixedClass;
 
     //constructors
-    public LinkedList()
+    LinkedList()
     {
-        head = null;
-        count = 0;
-        singlyLinked = false;
-        circular = false;
+        this(false,false,Object.class);
     }
     LinkedList(boolean singly, boolean circ)
     {
         this(singly,circ,Object.class);
     }
-    public LinkedList(boolean singly, boolean circ, Class<?> T)
+    LinkedList(boolean singly, boolean circ, Class<?> T)
     {
+        head = null;
+        count = 0;
         fixedClass = T;
         singlyLinked = singly;
         circular = circ;
     }
 
-    public void insert(Node n)
+    void insert(Node n)
     {
         if(!getFixedClass().isAssignableFrom(n.getData().getClass()))
         {
@@ -109,13 +108,13 @@ public class LinkedList
     //inserting a node of any datatype
     //generic class T is used in this method
     //checking of whether the datatype is allowed in this list is handled by the other insert method
-    public <T extends Comparable<T>> void insert(T cls)
+    <T extends Comparable<T>> void insert(T cls)
     {
         Node<T> node = new Node<>(cls);
         insert(node);
     }
 
-    public Node getLastNode()
+    private Node getLastNode()
     {
         if(empty())
         {
@@ -129,28 +128,28 @@ public class LinkedList
         return temp;
     }
 
-    public Node getHead()
+    private Node getHead()
     {
         return head;
     }
-    public int getCount()
+    private int getCount()
     {
         return count;
     }
-    public boolean getSinglyLinked()
+    private boolean getSinglyLinked()
     {
         return singlyLinked;
     }
-    public boolean getCircular()
+    private boolean getCircular()
     {
         return circular;
     }
-    public Class<?> getFixedClass()
+    private Class<?> getFixedClass()
     {
         return fixedClass;
     }
 
-    public void setSinglyLinked(boolean var)
+    void setSinglyLinked(boolean var)
     {
         if(var == singlyLinked)
         {
@@ -179,9 +178,14 @@ public class LinkedList
         }
         else
         {
+            if(empty())
+            {
+                return;
+            }
             Node temp = head;
             Node ahead = temp.getNextNode();
-            if(ahead == null || temp == null)
+
+            if(ahead == null)
             {
                 return;
             }
@@ -203,7 +207,7 @@ public class LinkedList
         }
     }
 
-    public void setCircular(boolean var)
+    void setCircular(boolean var)
     {
         if(var == circular)
         {
@@ -233,7 +237,7 @@ public class LinkedList
             }
         }
     }
-    public <T> boolean find(T cls)
+    <T> boolean find(T cls)
     {
         Node temp = head;
         for(int i = 0;i<getCount();i++)
@@ -246,15 +250,14 @@ public class LinkedList
         }
         return false;
     }
-    public LinkedList
-    filter(Class<?> cls)
+    LinkedList filter(Class<?> cls)
     {
         //exit statements
         if(cls == fixedClass)
         {
             return this;
         }
-        if(fixedClass != Object.class && fixedClass != cls)
+        if(fixedClass != Object.class) //&& cls != fixedClass
         {
             System.out.println();
             return new LinkedList(getSinglyLinked(),getCircular());
@@ -278,7 +281,7 @@ public class LinkedList
         return filteredList;
     }
 
-    public <T> boolean remove(T cls)
+    <T> boolean remove(T cls)
     {
         //exit statements
         if(!find(cls))
@@ -344,7 +347,7 @@ public class LinkedList
         return temp;
     }
 
-    public boolean empty()
+    private boolean empty()
     {
         if(count == 0)
         {
@@ -352,16 +355,16 @@ public class LinkedList
         }
         return false;
     }
-    public void incrementCount()
+    private void incrementCount()
     {
         count++;
     }
-    public void decrementCount()
+    private void decrementCount()
     {
         count--;
     }
 
-    public String printForward()
+    String printForward()
     {
         String output = "";
         Node temp = head;
@@ -384,7 +387,7 @@ public class LinkedList
         return output;
     }
 
-    public String printBackward()
+    String printBackward()
     {
         if(singlyLinked)
         {
