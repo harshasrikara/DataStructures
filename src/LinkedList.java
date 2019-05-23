@@ -4,7 +4,7 @@ public class LinkedList
     private int count;
     private boolean singlyLinked;
     private boolean circular;
-    Class<?> fixedClass;
+    private Class<?> fixedClass;
 
     //constructors
     public LinkedList()
@@ -14,7 +14,7 @@ public class LinkedList
         singlyLinked = false;
         circular = false;
     }
-    public LinkedList(boolean singly, boolean circ)
+    LinkedList(boolean singly, boolean circ)
     {
         this(singly,circ,Object.class);
     }
@@ -27,7 +27,7 @@ public class LinkedList
 
     public void insert(Node n)
     {
-        if(!fixedClass.isAssignableFrom(n.getData().getClass()))
+        if(!getFixedClass().isAssignableFrom(n.getData().getClass()))
         {
             System.out.println("please insert only data from the following class - " + fixedClass + " " + n.getData() + " is invalid");
             return;
@@ -202,6 +202,7 @@ public class LinkedList
             }
         }
     }
+
     public void setCircular(boolean var)
     {
         if(var == circular)
@@ -245,7 +246,8 @@ public class LinkedList
         }
         return false;
     }
-    public LinkedList filter(Class<?> cls)
+    public LinkedList
+    filter(Class<?> cls)
     {
         //exit statements
         if(cls == fixedClass)
@@ -276,6 +278,56 @@ public class LinkedList
         return filteredList;
     }
 
+    public <T extends Comparable<T>> boolean remove(T cls)
+    {
+        //exit statements
+        if(!find(cls))
+        {
+            return false;
+        }
+        if(empty())
+        {
+            return false;
+        }
+
+        if(head.getData() == cls)
+        {
+            head = head.getNextNode();
+            decrementCount();
+            return true;
+        }
+        if(getCount()>1)
+        {
+            Node temp = head;
+            Node ahead = head.getNextNode();
+
+            while(ahead != null && ahead != head)
+            {
+                if(ahead.getData() == cls)
+                {
+                    if(singlyLinked)
+                    {
+                        temp.setNextNode(ahead.getNextNode());
+                    }
+                    else
+                    {
+                        temp.setNextNode(ahead.getNextNode());
+                        if(temp.getNextNode() != null)
+                        {
+                            temp.getNextNode().setPrevNode(temp);
+                        }
+                    }
+                    decrementCount();
+                    return true;
+                }
+                temp = temp.getNextNode();
+                ahead = ahead.getNextNode();
+            }
+        }
+        return false;
+
+    }
+
     public boolean empty()
     {
         if(count == 0)
@@ -287,6 +339,10 @@ public class LinkedList
     public void incrementCount()
     {
         count++;
+    }
+    public void decrementCount()
+    {
+        count--;
     }
 
     public String printForward()
