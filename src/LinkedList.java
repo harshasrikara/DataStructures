@@ -278,7 +278,7 @@ public class LinkedList
         return filteredList;
     }
 
-    public <T extends Comparable<T>> boolean remove(T cls)
+    public <T> boolean remove(T cls)
     {
         //exit statements
         if(!find(cls))
@@ -326,6 +326,22 @@ public class LinkedList
         }
         return false;
 
+    }
+
+    //this method gets the kth element in the linked list
+    public Node get(int k)
+    {
+        if(k>= getCount())
+        {
+            System.out.println("Index out of bounds");
+            return null;
+        }
+        Node temp = head;
+        for(int i = 0;i<k;i++)
+        {
+            temp = temp.getNextNode();
+        }
+        return temp;
     }
 
     public boolean empty()
