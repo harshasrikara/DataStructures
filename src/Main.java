@@ -62,7 +62,7 @@ public class Main {
 
         System.out.println(linkedList.find(3));
 
-        System.out.println(linkedList.get(6));
+        System.out.println(linkedList.get(23));
 
     }
 }

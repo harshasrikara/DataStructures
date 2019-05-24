@@ -334,10 +334,11 @@ public class LinkedList
     //this method gets the kth element in the linked list
     public Node get(int k)
     {
-        if(k>= getCount())
-        {
-            System.out.println("Index out of bounds");
-            return null;
+        if(!getCircular()) {
+            if (k >= getCount()) {
+                System.out.println("Index out of bounds");
+                return null;
+            }
         }
         Node temp = head;
         for(int i = 0;i<k;i++)

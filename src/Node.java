@@ -11,8 +11,8 @@ public class Node<DataType extends Comparable<DataType>>  implements Comparable<
     //variables
     private DataType data;
 
-    private Node nextNode; //also left
-    private Node prevNode; //also right
+    private Node<DataType> nextNode; //also left
+    private Node<DataType> prevNode; //also right
 
     //constructors
     public Node()
@@ -27,7 +27,7 @@ public class Node<DataType extends Comparable<DataType>>  implements Comparable<
         nextNode = null;
         prevNode = null;
     }
-    public Node(DataType info, Node next, Node prev)
+    public Node(DataType info, Node<DataType> next, Node<DataType> prev)
     {
         setData(info);
         setNextNode(next);
@@ -45,11 +45,11 @@ public class Node<DataType extends Comparable<DataType>>  implements Comparable<
     {
         return data;
     }
-    public Node getNextNode()
+    public Node<DataType> getNextNode()
     {
         return nextNode;
     }
-    public Node getPrevNode()
+    public Node<DataType> getPrevNode()
     {
         return prevNode;
     }
@@ -59,17 +59,39 @@ public class Node<DataType extends Comparable<DataType>>  implements Comparable<
     {
         data = info;
     }
-    public void setNextNode(Node next)
+    public void setNextNode(Node<DataType> next)
     {
         nextNode = next;
     }
-    public void setPrevNode(Node prev)
+    public void setPrevNode(Node<DataType> prev)
     {
         prevNode = prev;
     }
 
+    //redundant setters and getter for binary tree class
+    //these setters and getters perform the same functions as setNextNode/getNextNode etc
+    //however they address the variable as leftNode and rightNode instead
+    //Thus, it is more obvious as to what is happening in the binary tree
+
+    public void setLeftNode(Node<DataType> left)
+    {
+        prevNode = left;
+    }
+    public void setRightNode(Node<DataType> right)
+    {
+        nextNode = right;
+    }
+    public Node<DataType> getLeftNode()
+    {
+        return prevNode;
+    }
+    public Node<DataType> getRightNode()
+    {
+        return nextNode;
+    }
+
     //operators
-    public boolean equals(Node n)
+    public boolean equals(Node<DataType> n)
     {
         if(n.getData().equals(getData()))
         {
@@ -78,12 +100,13 @@ public class Node<DataType extends Comparable<DataType>>  implements Comparable<
         return false;
     }
 
-    public void swap(Node n)
+    public void swap(Node<DataType> n)
     {
         DataType temp = getData();
         setData((DataType)n.getData());
         n.setData(temp);
     }
+
 
     public int compareTo(DataType node)
     {
