@@ -4,7 +4,8 @@ This project is designed for practice in creating a variety of data structures i
 
 ### Linked List
 
-Currently in development.
+Development complete.
+A linked list is a data structure that has a discontinuous set of values stored in it. Each value in the linked list is paired with a reference pointing to the next item on the linked list. This is different from an array where all the values are stored in consecutive memory addresses and therefore there is no need to point to where the next node is. 
 
 ##### Singly
 
