@@ -2,6 +2,10 @@
 
 This project is designed for practice in creating a variety of data structures in various languages. Currently, all the data structures will be coded in JAVA but eventually examples will be created in C++, C# and Python. All data structures for Java use generics and the same node class.
 
+#### Understanding the Node class
+
+THe node class exists as a way to store information. The same node class is used by both the LinkedList class as well as the Binary Tree class. Within the node class are variables to store references to two nodes. In the Linked List class these nodes are interpreted as the next node and previous node. In the Binary Tree class, these same two nodes are interpreted as the left child and right child nodes. Thus, many of the methods are duplicated with different names to make understanding the code easier even though the perform the same function. Eg - the method `getNextNode()` and the method `getLeftNode()` both perform the same task. However, they are easier to understand when used in the context of the code.
+
 ### Linked List
 
 Development complete.
