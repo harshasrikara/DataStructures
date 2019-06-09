@@ -23,7 +23,7 @@ Setting singly linked to false when creating the list will make the linked list 
 
 Both the singly linked and doubly linked list can be made circular. This ensures that the last node connects to the first node and in the case of the doubly linked list that the first node also connects backwards with the first node.
 
-##### Generic <T>
+##### Generic <T> FixedClass
 
 Setting no value to the generic parameter will set it by default to Object.class. This means that nodes with values of any datatype can be inserted into the linked list. Setting it to a specific class such as Interger.class or String.class will limit the insertion of nodes to only contain that specific datatype. In the event that a node with a different datatype is attempted to be passed through, it will log an error message.
 
