@@ -44,7 +44,7 @@ The default constructor and the second one both call the third constructor with 
 
 ###### Setters/Getters
 
-The boolean values for singly and circular can be changed. This modifies the linked list by adding or removing references from the nodes. The value for count can be found through getCount(). This linked list stores that value instead of dynamically calculating it each time the method is called. For the time being, the value of the generic class <T> stored in teh variable fixedClass cannot be changed after creation. It can only be found by getFixedClass(). 
+The boolean values for singly and circular can be changed. This modifies the linked list by adding or removing references from the nodes. The value for count can be found through getCount(). This linked list stores that value instead of dynamically calculating it each time the method is called. For the time being, the value of the generic class <T> stored in the variable fixedClass cannot be changed after creation. It can only be found by getFixedClass(). 
   
 ###### Insert
 
