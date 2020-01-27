@@ -82,8 +82,4 @@ Documentation being written...
 
 ##### AVL Tree
 
-##### Red Black Tree
-
-Creation complete, merge in process... 
-
 ##### Heaps
